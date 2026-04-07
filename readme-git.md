@@ -1,5 +1,8 @@
 ## GIT BÁSICO
 
+# 0. Clonar o repositório
+git clone https://github.com/grmak/up-ads.git
+
 # 1. Verificar status (já feito)
 git status
 
