@@ -12,13 +12,15 @@ Exemplo de saída (parcial):
 """
 
 """ Cabeçalho"""
+largura = 5
+print(f"{'':>11}", end='')
 for i in range(1, 11):
-    print(f"   {i} ", end='')
+    print(f"{i:>{largura}}", end='')
+print()
 
-print("")
-tabuada=""
 for i in range(1, 11):    
+    print(f"Tabuada {i:>2}:", end='')   
     for j in range(1,11):
-        tabuada = (f"{i*j}")
-    print(f"{i}:", end='')
+        print(f"{i*j:>{largura}}", end='')   
+    print()       
 

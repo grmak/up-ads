@@ -1,4 +1,5 @@
 import os
+import sys
 import subprocess
 from typing import List
 
@@ -79,7 +80,7 @@ def executar_arquivo(nome_arquivo: str) -> None:
     
     print("\nExecutando > ", arq)
     
-    subprocess.run(["python", arq])
+    subprocess.run([sys.executable, arq])
 
 
 def main() -> None:

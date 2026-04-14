@@ -8,3 +8,15 @@ Exemplo (n=3, m=5):
 *****
 *****
 """
+
+
+try:
+    m = int(input("Linhas: "))    
+    n = int(input("Collunas: "))
+    i = 0
+    while (i<m):
+        print(f"{'*'*n}")
+        i+=1
+
+except (ValueError):
+    print("Erro: valor inválido")
