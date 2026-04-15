@@ -1,15 +1,16 @@
 import time
 import random
 
+msg = "sou global"
+def minhaf():
+    msg = "sou local"
+    print(msg)    
+
+minhaf()
+print(msg)
+
 def eh_par(numero):
     return numero % 2 == 0 
-
-for i in range(1,8):
-    if eh_par(i):
-        print(f'{i} é par')
-    else:
-        print(f'{i} é ímpar')
-
 
 def estatistica(a:int,b:int,c:int):
     soma=a+b+c
@@ -18,10 +19,8 @@ def estatistica(a:int,b:int,c:int):
     menor=min(a,b,c)
     return soma, media, maior, menor
 
-s, m, mx, mn = estatistica('8',5,10)
-
-print(f'Soma:{s} | Média:{m:.1f} | Maior:{mx} | Menor:{mn}')
-
+#s, m, mx, mn = estatistica('8',5,10)
+#print(f'Soma:{s} | Média:{m:.1f} | Maior:{mx} | Menor:{mn}')
 
 
 def cor():
