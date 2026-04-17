@@ -8,3 +8,19 @@ Média da turma
 Quantidade de aprovados (>= 7), recuperação (>= 5 e < 7) e reprovados (< 5)
 Percentual de aprovação
 """
+
+try:
+    quantidade = 0
+    soma = 0
+    numero = int(input("Numero 1: "))        
+    while numero!=0:
+        quantidade += 1        
+        soma = soma + numero        
+        numero = int(input("Numero 1: "))            
+    
+    print(f"Soma de todos os números: {soma}")    
+    print(f"Quantidade de números digitados: {quantidade}")    
+    print(f"Média dos valores: {soma/quantidade}")    
+
+except (ValueError):
+    print("Erro: número inválido.")
