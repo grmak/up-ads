@@ -11,9 +11,9 @@ Segundo número: 3
 """
 
 try:
-    numero1 = int(input("Valor 1: "))    
+    numero1 = int(input("Primeiro número: "))    
     operador = input("Operador: ")
-    numero2 = int(input("Valor 2: "))
+    numero2 = int(input("Segundo número: "))
     resultado = 0
 
     match operador:

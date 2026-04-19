@@ -5,9 +5,9 @@ Leia n números (onde n é informado pelo usuário) e, ao final, mostre o maior,
 
 
 try:
-    n = int(input("Quantidade: "))
+    qtde = int(input("Quantidade: "))
     maior = menor = soma = 0
-    for i in range(0, n):
+    for i in range(0, qtde):
         n = int(input("Numero: "))
         soma += n
         if i==0:
@@ -17,10 +17,11 @@ try:
         if n > maior:
             maior=n       
 
+    print("="*50)
     print(f"Maior número: {maior}")
     print(f"Menor número: {menor}")
-    print(f"Quantidade: {n}")
+    print(f"Quantidade: {qtde}")
     print(f"Soma: {soma}")
-    print(f"Média : {soma/n}")
+    print(f"Média : {soma/qtde}")
 except (ValueError):
     print("Erro: Input inválido.")

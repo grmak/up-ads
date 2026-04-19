@@ -6,9 +6,12 @@ peça novamente até o usuário digitar um valor válido. Ao final, exiba a nota
 
 
 try:
-    nota = -1
-    while not (nota in range(0, 11)):
+    nota_invalida = True
+    while nota_invalida:
         nota = int(input("Nota: "))    
+        nota_invalida = (nota < 0) or (nota>10)
+        if nota_invalida:
+            print("Nota inválida, digite outra nota")
     
     print()
     print(f"Nota aceita: {nota}")    

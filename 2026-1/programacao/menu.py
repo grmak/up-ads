@@ -92,15 +92,7 @@ def main() -> None:
     2. Exibe o menu interativo
     3. Processa a escolha do usuário
     4. Executa a aula selecionada
-    5. Retorna ao menu até que o usuário saia
-    
-    Example:
-        >>> if __name__ == "__main__":
-        ...     main()
-        
-    Note:
-        A função continua em execução até que o usuário escolha
-        a opção 0 (Sair) no menu.
+    5. Retorna ao menu até que o usuário digite 0
     """    
     while True:
         arquivos = listar_aulas()
