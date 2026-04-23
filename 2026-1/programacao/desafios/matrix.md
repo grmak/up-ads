@@ -178,3 +178,104 @@ Repetir **continuamente**:
 ---
 
 ## Fluxo Visual Esperado (Exemplo)
+┌────────────────────────────────────────┐
+│ 1. INICIALIZAÇÃO                       │
+│ - Ler dimensões do terminal            │
+│ - Criar matriz vazia                   │
+│ - Configurar parâmetros                │
+│ - Inicializar vetor de controle        │
+└────────────────┬───────────────────────┘
+                 ↓
+╔════════════════════╗
+║ LOOP INFINITO      ║
+╚════════════════════╝
+                ↓
+┌────────────────────────────────────────┐
+│ 2. LIMPAR TELA                         │
+└────────────────┬───────────────────────┘
+                 ↓
+┌────────────────────────────────────────┐
+│ 3. ATUALIZAR MATRIZ                    │
+│ Para cada coluna:                      │
+│ - Sortear nova cabeça                  │
+│ - Mover cabeças existentes             │
+│ - Gerenciar rastros                    │
+│ - Atualizar células soltas             │
+└────────────────┬───────────────────────┘
+                 ↓
+┌────────────────────────────────────────┐
+│ 4. DESENHAR TELA                       │
+│ Para cada linha:                       │
+│ Para cada coluna:                      │
+│ Aplicar cor conforme intensidade       │
+│ Imprimir caractere ou espaço           │
+└────────────────┬───────────────────────┘
+                 ↓
+┌────────────────────────────────────────┐
+│ 5. AGUARDAR FRAME                      │
+│ Pausar por 0.033 segundos              │
+└────────────────┬───────────────────────┘
+                 ↓
+│
+└──────→ voltar ao passo 2
+
+
+---
+
+## Parâmetros Configuráveis
+
+| Parâmetro | Valor Padrão | Efeito |
+|-----------|--------------|--------|
+| FPS (frames por segundo) | 30 | Suavidade da animação |
+| Probabilidade nova cabeça | 0.10 (10%) | Densidade de caracteres |
+| Velocidade base | 2 linhas/frame | Rapidez da queda |
+| Variação de velocidade | 1 a 5 | Assincronismo entre colunas |
+| Comprimento do rastro | 3 a 8 | Tamanho da esteira |
+| Probabilidade mutação | 0.05 (5%) | Frequência de mudança dos caracteres |
+
+---
+
+## Considerações de Performance
+
+1. **Matriz redimensionável**: Se o usuário redimensionar o terminal, recriar matriz automaticamente
+
+2. **Taxa de atualização**: 
+   - 30 FPS oferece boa fluidez sem sobrecarregar CPU
+   - Reduzir para 15-20 FPS em hardware mais antigo
+
+3. **Uso de memória**:
+   - Matriz 80x24 ≈ 2.000 células
+   - Cada célula com 3 atributos ≈ 6KB de memória (muito leve)
+
+4. **Otimização de desenho**:
+   - Evitar redesenhos desnecessários (redesenhar apenas células que mudaram)
+   - Usar buffer duplo (desenhar em memória, depois enviar ao terminal)
+
+---
+
+## Variações Avançadas
+
+### Interatividade com Mouse
+
+- Posição do mouse detectada:
+  - Na área do mouse: caracteres aceleram
+  - Cabeças "fogem" do mouse
+  - Efeito de "splash" de caracteres ao clicar
+
+### Modo Chuva
+
+- Todas as colunas têm cabeça ativa simultaneamente
+- Velocidades variam entre colunas
+- Chuva intensa com rastros longos
+
+### Modo Onda
+
+- Cabeças começam no topo e descem em formato de onda senoidal
+- Velocidade varia conforme posição na tela
+
+### Modo Espectro
+
+- Cores mudam ciclicamente (verde → ciano → azul → verde)
+- Velocidade de mudança configurável
+
+---
